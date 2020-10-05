@@ -1,0 +1,21 @@
+img=imread('peppers.png');
+size(img)
+subplot(2,2,1), imshow(img)
+title('Original RGB Image')   
+R= img(:,:,1);
+G= img(:,:,2);
+B= img(:,:,3);
+ 
+Black=zeros(size(img, 1), size(img, 2), 'uint8');
+red = cat(3, R, Black, Black);
+green = cat(3, Black, G, Black);
+blue = cat(3, Black, Black, B);
+ 
+subplot(2,2,2),imshow(red)
+title('Red Component')
+ 
+subplot(2,2,3),imshow(green)
+title('Green Component')
+ 
+subplot(2,2,4),imshow(blue)
+title('Blue Component')
